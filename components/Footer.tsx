@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { STORE } from "@/lib/data";
-import { PHOTO_CREDIT, PHOTO_CREDIT_URL } from "@/lib/photos";
+import { PHOTO_CREDIT, PHOTO_CREDIT_URL, CORREIO_2024_URL, CORREIO_2026_URL } from "@/lib/photos";
 
 export default function Footer() {
   return (
@@ -56,6 +56,15 @@ export default function Footer() {
             <p className="mt-3 opacity-50 text-xs leading-relaxed">
               <a href={PHOTO_CREDIT_URL} target="_blank" rel="noreferrer" className="underline underline-offset-4 hover:opacity-80">
                 {PHOTO_CREDIT}
+              </a>
+              <br />
+              Passarela 2024:{" "}
+              <a href={CORREIO_2024_URL} target="_blank" rel="noreferrer" className="underline underline-offset-4 hover:opacity-80">
+                Claudio Andrade
+              </a>
+              {" · "}Editorial monumentos:{" "}
+              <a href={CORREIO_2026_URL} target="_blank" rel="noreferrer" className="underline underline-offset-4 hover:opacity-80">
+                Mariana Campos / Correio Braziliense
               </a>
             </p>
           </div>

@@ -129,9 +129,8 @@ function Manifesto() {
   );
 }
 
-/* ============ BRASÍLIA — WOW #3 ============ */
+/* ============ BRASÍLIA ============ */
 function Brasilia() {
-  const [hover, setHover] = useState(false);
   return (
     <section className="bg-ink text-bone py-28 md:py-40 overflow-clip" aria-label="Feita em Brasília">
       <div className="mx-auto max-w-[1600px] px-5 md:px-10">
@@ -143,40 +142,16 @@ function Brasilia() {
         </Reveal>
         <div className="grid md:grid-cols-2 gap-8 mt-14 items-stretch">
           <Reveal>
-            <div
-              className="relative aspect-[4/5] overflow-hidden cursor-crosshair"
-              onMouseEnter={() => setHover(true)}
-              onMouseLeave={() => setHover(false)}
-              onFocus={() => setHover(true)}
-              onBlur={() => setHover(false)}
-              tabIndex={0}
-              role="img"
-              aria-label="Interação: arquitetura de Brasília revela modelo Ferretti ao passar o mouse"
-            >
-              {/* camada arquitetura */}
-              <div
-                className={`absolute inset-0 transition-opacity duration-700 ${hover ? "opacity-0" : "opacity-100"}`}
-                style={{
-                  background:
-                    "repeating-linear-gradient(0deg, #3a3835 0 14px, #8E8C86 14px 16px), linear-gradient(180deg,#b9c3d4,#8E8C86)",
-                }}
-                aria-hidden
-              >
-                <span className="absolute top-6 left-6 editorial-label bg-ink/70 px-3 py-2">Eixo Monumental — concreto</span>
-              </div>
-              {/* camada roupa */}
-              <div
-                className={`absolute inset-0 transition-all duration-700 ${hover ? "opacity-100 scale-100" : "opacity-0 scale-105"}`}
-                style={{ background: "linear-gradient(120deg,#E85D1F 0 45%, #5B2A86 45% 75%, #1E6B3A 75% 100%)" }}
-                aria-hidden
-              >
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[52%] h-[80%] rounded-t-full bg-ink/85" />
-                <span className="absolute top-6 left-6 editorial-label bg-bone text-ink px-3 py-2">Ferretti — corpo em movimento</span>
-              </div>
-              <span className="absolute bottom-5 left-1/2 -translate-x-1/2 text-[11px] tracking-[0.3em] uppercase bg-bone text-ink px-4 py-2">
-                {hover ? "Concreto → corpo" : "Passe o mouse — revele →"}
-              </span>
-            </div>
+            <EditorialImage
+              src={PHOTOS.monumento.src}
+              alt={PHOTOS.monumento.alt}
+              position="50% 30%"
+              label="Catedral — Brasília"
+              sub="arquitetura × corpo"
+              tall
+              href="/editorial/brasilia-entre-concreto-e-movimento"
+            />
+            <p className="text-[11px] tracking-[0.25em] uppercase opacity-50 mt-3">{PHOTOS.monumento.credit}</p>
           </Reveal>
           <div className="flex flex-col justify-between gap-8">
             <Reveal delay={0.1}>
@@ -388,7 +363,7 @@ function PessoasReais() {
             <EditorialImage color="#5B2A86" label="Idades diversas" sub="individualidade" tall />
           </Reveal>
           <Reveal>
-            <EditorialImage color="#1E6B3A" label="Estilos diversos" sub="individualidade" tall />
+            <EditorialImage src={PHOTOS.vermelho.src} alt={PHOTOS.vermelho.alt} position="50% 20%" label="Estilos diversos" sub="passarela" tall />
           </Reveal>
         </div>
         <Reveal className="mt-8">
@@ -568,20 +543,13 @@ function Feed() {
             { src: PHOTOS.cru.src, alt: PHOTOS.cru.alt },
             { src: PHOTOS.finale.src, alt: PHOTOS.finale.alt },
             { src: PHOTOS.loja.src, alt: PHOTOS.loja.alt },
+            { src: PHOTOS.vermelho.src, alt: PHOTOS.vermelho.alt },
+            { src: PHOTOS.monumento.src, alt: PHOTOS.monumento.alt },
           ].map((p, i) => (
             <Reveal key={p.src} delay={i * 0.04}>
               <a href={STORE.instagramUrl} target="_blank" rel="noreferrer" aria-label={`Abrir Instagram Ferretti — foto ${i + 1}: ${p.alt}`}>
                 <div className="aspect-square relative overflow-hidden group bg-ink">
                   <Image src={p.src} alt="" fill sizes="(max-width: 768px) 50vw, 16vw" className="object-cover transition-transform duration-700 group-hover:scale-105" style={{ objectPosition: "50% 25%" }} />
-                  <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-ink/40 text-bone text-[11px] tracking-[0.3em] uppercase">View</span>
-                </div>
-              </a>
-            </Reveal>
-          ))}
-          {["#E85D1F", "#5B2A86"].map((c, i) => (
-            <Reveal key={c} delay={(i + 4) * 0.04}>
-              <a href={STORE.instagramUrl} target="_blank" rel="noreferrer" aria-label={`Abrir Instagram Ferretti — cor ${i + 5}`}>
-                <div className="aspect-square relative overflow-hidden group" style={{ background: `linear-gradient(135deg, ${c}, #101010)` }}>
                   <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-ink/40 text-bone text-[11px] tracking-[0.3em] uppercase">View</span>
                 </div>
               </a>

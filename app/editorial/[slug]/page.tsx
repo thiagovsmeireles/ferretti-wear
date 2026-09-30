@@ -10,6 +10,7 @@ const POST_PHOTOS: Record<string, { src: string; alt: string; position?: string 
   "somos-as-cores-bastidores": { src: PHOTOS.finale.src, alt: PHOTOS.finale.alt, position: "50% 35%" },
   "atemporalidade-estilo-fica": { src: PHOTOS.azul.src, alt: PHOTOS.azul.alt, position: "50% 25%" },
   "materia-linho-algodao-viscose": { src: PHOTOS.cru.src, alt: PHOTOS.cru.alt, position: "50% 30%" },
+  "brasilia-entre-concreto-e-movimento": { src: PHOTOS.monumento.src, alt: PHOTOS.monumento.alt, position: "50% 30%" },
 };
 
 const BODY: Record<string, string[]> = {
