@@ -3,21 +3,23 @@
  * Fonte: Radar Digital Brasília (imprensa). Crédito obrigatório na interface.
  * Substitua por arquivos próprios da marca quando houver originais.
  */
+const B = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const PHOTOS = {
   finale: {
-    src: "/fotos/desfile-1.jpg",
+    src: `${B}/fotos/desfile-1.jpg`,
     alt: "Salomão Ferretti no final do desfile Somos as Cores, aplaudido pelo público no Dunia Hall",
   },
   azul: {
-    src: "/fotos/desfile-2.jpg",
+    src: `${B}/fotos/desfile-2.jpg`,
     alt: "Modelo na passarela com look azul fluido Ferretti Wear, desfile Somos as Cores",
   },
   cru: {
-    src: "/fotos/desfile-3.jpg",
+    src: `${B}/fotos/desfile-3.jpg`,
     alt: "Modelo na passarela com conjunto cru bordado Ferretti Wear, desfile Somos as Cores",
   },
   loja: {
-    src: "/fotos/desfile-4.jpg",
+    src: `${B}/fotos/desfile-4.jpg`,
     alt: "Salomão Ferretti em entrevista na Casa Ferretti, arara com peças ao fundo",
   },
 } as const;
