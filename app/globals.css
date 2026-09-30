@@ -35,7 +35,10 @@ body {
   font-family: 'Instrument Serif','DM Serif Display','Cormorant Garamond',Georgia,serif;
   font-weight: 400;
   letter-spacing: -0.02em;
-  line-height: 0.86;
+  /* IMPORTANTE: sem line-height aqui — ele vencia os leading-* do Tailwind
+     na cascata (mesma especificidade, declarado depois dos utilities),
+     colando as linhas e fatiando acentos/descendentes. Ajuste fino via leading-* no JSX. */
+  line-height: 1;
 }
 
 .editorial-label {

@@ -9,7 +9,7 @@ export default function Salomao() {
       <div className="md:col-span-5"><Reveal><EditorialImage color="#101010" label="Salomão Ferretti" sub="retrato" tall /></Reveal></div>
       <div className="md:col-span-7">
         <Reveal><p className="editorial-label opacity-50">O estilista</p>
-        <h1 className="font-serif-display text-[15vw] md:text-[6vw] leading-[0.85] mt-4">SALOMÃO<br />FERRETTI</h1></Reveal>
+        <h1 className="font-serif-display text-[15vw] md:text-[6vw] leading-[0.95] mt-4">SALOMÃO<br />FERRETTI</h1></Reveal>
         <Reveal delay={0.1}>
           <blockquote className="font-serif-display italic text-3xl md:text-4xl mt-8">“Brasília estava cinza. Nós fomos as cores.”</blockquote>
           <div className="mt-6 space-y-5 text-lg leading-relaxed opacity-85 max-w-[60ch]">

@@ -44,9 +44,9 @@ export default function EditorialImage({
         <span className="bg-ink/60 px-2 py-1 backdrop-blur-sm">{label}</span>
         <span className="bg-ink/60 px-2 py-1 backdrop-blur-sm hidden sm:block">{sub}</span>
       </div>
-      <div className="absolute bottom-5 left-6 right-6 flex items-end justify-between" aria-hidden>
-        <span className="font-serif-display italic text-bone text-2xl leading-none drop-shadow">Ferretti</span>
-        <span className="text-bone/80 text-[10px] tracking-[0.3em] uppercase">BSB — 2026</span>
+      <div className="absolute bottom-5 left-6 right-6 flex items-end justify-between gap-3" aria-hidden>
+        <span className="font-serif-display italic text-bone text-xl leading-none drop-shadow truncate">Ferretti</span>
+        <span className="text-bone/80 text-[10px] tracking-[0.3em] uppercase shrink-0">BSB — 2026</span>
       </div>
       {/* céu */}
       <div className="absolute top-0 left-0 w-[34%] h-[38%] bg-gradient-to-b from-[#aebfd4] to-[#d8d3c5]" aria-hidden />

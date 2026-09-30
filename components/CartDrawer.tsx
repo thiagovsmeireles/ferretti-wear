@@ -6,7 +6,7 @@ import { useStore } from "@/lib/store";
 export default function CartDrawer() {
   const { cart, remove, cartOpen, setCartOpen } = useStore();
   return (
-    <div aria-hidden={!cartOpen} className={`fixed inset-0 z-[70] ${cartOpen ? "" : "pointer-events-none"}`}>
+    <div aria-hidden={!cartOpen} className={`fixed inset-0 z-[70] transition-[visibility] duration-[600ms] ${cartOpen ? "visible" : "invisible pointer-events-none"}`}>
       <div
         onClick={() => setCartOpen(false)}
         className={`absolute inset-0 bg-ink/40 backdrop-blur-sm transition-opacity duration-500 ${

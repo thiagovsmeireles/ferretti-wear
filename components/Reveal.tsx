@@ -32,10 +32,10 @@ export function MaskLine({ children, delay = 0 }: { children: ReactNode; delay?:
   const reduce = useReducedMotion();
   if (reduce) return <span className="block">{children}</span>;
   return (
-    <span className="block overflow-hidden">
+    <span className="block overflow-hidden pb-[0.12em] -mb-[0.12em] pt-[0.06em] -mt-[0.06em]">
       <motion.span
-        className="block"
-        initial={{ y: "110%" }}
+        className="block will-change-transform"
+        initial={{ y: "112%" }}
         whileInView={{ y: "0%" }}
         viewport={{ once: true }}
         transition={{ duration: 1, delay, ease: [0.22, 1, 0.36, 1] }}

@@ -36,7 +36,7 @@ export default function Post({ params }: { params: { slug: string } }) {
     <article className="pt-32 pb-28 mx-auto max-w-4xl px-5 md:px-10">
       <Link href="/editorial" className="inline-flex items-center gap-2 text-[11px] tracking-[0.3em] uppercase opacity-60"><ArrowLeft size={14} /> Editorial</Link>
       <Reveal><p className="editorial-label opacity-50 mt-8">{post.tag}</p>
-      <h1 className="font-serif-display text-[11vw] md:text-[4.5vw] leading-[0.9] mt-4">{post.title}</h1>
+      <h1 className="font-serif-display text-[11vw] md:text-[4.5vw] leading-[0.96] mt-4">{post.title}</h1>
       <p className="mt-4 opacity-60 text-lg">{post.excerpt}</p></Reveal>
       <Reveal delay={0.1}><div className="mt-10"><EditorialImage color="#E85D1F" label={post.tag} sub={post.title.slice(0, 24)} /></div></Reveal>
       <div className="mt-10 space-y-6 text-lg leading-relaxed opacity-85">

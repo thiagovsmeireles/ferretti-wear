@@ -10,7 +10,7 @@ export default function LooksPage() {
     <div className="pt-32 pb-28 bg-ink text-bone min-h-screen">
       <div className="mx-auto max-w-[1600px] px-5 md:px-10">
         <Reveal><p className="editorial-label opacity-50">Looks completos</p>
-        <h1 className="font-serif-display text-[14vw] md:text-[7vw] leading-[0.85] mt-4">NÃO É A ROUPA.<br /><span className="italic">É QUEM VESTE.</span></h1></Reveal>
+        <h1 className="font-serif-display text-[14vw] md:text-[7vw] leading-[0.95] mt-4">NÃO É A ROUPA.<br /><span className="italic">É QUEM VESTE.</span></h1></Reveal>
         <div className="grid md:grid-cols-3 gap-5 mt-12">
           {LOOKS.map((l) => (
             <Reveal key={l.id}>

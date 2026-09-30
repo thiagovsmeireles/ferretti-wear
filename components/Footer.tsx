@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-ink text-bone mt-0" aria-label="Rodapé">
       <div className="mx-auto max-w-[1600px] px-5 md:px-10 pt-16 pb-8">
-        <p className="font-serif-display text-[13.5vw] md:text-[9vw] leading-[0.85] tracking-tight">
+        <p className="font-serif-display text-[13.5vw] md:text-[9vw] leading-[0.95] tracking-tight">
           VISTA<br />QUEM<br /><span className="italic">VOCÊ É.</span>
         </p>
 

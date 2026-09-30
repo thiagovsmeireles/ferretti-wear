@@ -8,7 +8,7 @@ export default function Casa() {
   return (
     <div className="pt-32 pb-28 mx-auto max-w-[1600px] px-5 md:px-10">
       <Reveal><p className="editorial-label opacity-50">A loja</p>
-      <h1 className="font-serif-display text-[13vw] md:text-[6.5vw] leading-[0.88] mt-4">CASA<br /><span className="italic">FERRETTI.</span></h1></Reveal>
+      <h1 className="font-serif-display text-[13vw] md:text-[6.5vw] leading-[0.96] mt-4">CASA<br /><span className="italic">FERRETTI.</span></h1></Reveal>
       <div className="grid md:grid-cols-2 gap-10 mt-12 items-start">
         <Reveal><EditorialImage color="#1E6B3A" label="Casa Ferretti" sub="CLN 102 Norte" tall />
         <p className="text-xs mt-3 opacity-50">Troque por fotografia real da loja — fachada, interior, arara, texturas.</p></Reveal>

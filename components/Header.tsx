@@ -102,8 +102,8 @@ export default function Header() {
 
       {/* mobile fullscreen editorial menu */}
       <div
-        className={`fixed inset-0 z-[60] bg-ink text-bone flex flex-col transition-transform duration-[600ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
-          menuOpen ? "translate-y-0" : "-translate-y-full"
+        className={`fixed inset-0 z-[60] bg-ink text-bone flex flex-col transition-[transform,visibility] duration-[600ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
+          menuOpen ? "translate-y-0 visible" : "-translate-y-full invisible"
         }`}
         aria-hidden={!menuOpen}
       >
@@ -119,7 +119,7 @@ export default function Header() {
               key={l.href}
               href={l.href}
               onClick={() => setMenuOpen(false)}
-              className="font-serif-display text-[13vw] leading-[0.95] hover:italic hover:translate-x-2 transition-all"
+              className="font-serif-display text-[13vw] leading-[1] hover:italic hover:translate-x-2 transition-all"
             >
               <span className="text-[11px] align-super mr-3 font-sans tracking-widest opacity-50">
                 0{i + 1}

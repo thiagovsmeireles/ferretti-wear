@@ -11,7 +11,7 @@ export default function Colecoes() {
   return (
     <div className="pt-32 pb-28 mx-auto max-w-[1600px] px-5 md:px-10">
       <Reveal><p className="editorial-label opacity-50">Coleções</p>
-      <h1 className="font-serif-display text-[14vw] md:text-[7vw] leading-[0.85] mt-4">ARQUIVO<br /><span className="italic">FERRETTI</span></h1></Reveal>
+      <h1 className="font-serif-display text-[14vw] md:text-[7vw] leading-[0.95] mt-4">ARQUIVO<br /><span className="italic">FERRETTI</span></h1></Reveal>
       <div className="grid md:grid-cols-3 gap-5 mt-12">
         {items.map((c) => (
           <Link key={c.year + c.title} href={c.href} className="group">

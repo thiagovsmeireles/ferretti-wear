@@ -6,7 +6,7 @@ export default function Contato() {
   return (
     <div className="pt-32 pb-28 mx-auto max-w-3xl px-5 md:px-10">
       <Reveal><p className="editorial-label opacity-50">Contato</p>
-      <h1 className="font-serif-display text-[14vw] md:text-[5vw] leading-[0.88] mt-4">FALE<br /><span className="italic">COM A CASA.</span></h1></Reveal>
+      <h1 className="font-serif-display text-[14vw] md:text-[5vw] leading-[0.96] mt-4">FALE<br /><span className="italic">COM A CASA.</span></h1></Reveal>
       <Reveal delay={0.1}>
         <div className="mt-10 space-y-4 text-lg">
           <p><strong>{STORE.name}</strong><br />{STORE.address} — {STORE.city}</p>

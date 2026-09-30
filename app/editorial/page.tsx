@@ -8,7 +8,7 @@ export default function Editorial() {
   return (
     <div className="pt-32 pb-28 mx-auto max-w-[1600px] px-5 md:px-10">
       <Reveal><p className="editorial-label opacity-50">Editorial — revista, não blog</p>
-      <h1 className="font-serif-display text-[16vw] md:text-[8vw] leading-[0.85] mt-4">LEIA<br /><span className="italic">COM CALMA.</span></h1></Reveal>
+      <h1 className="font-serif-display text-[16vw] md:text-[8vw] leading-[0.95] mt-4">LEIA<br /><span className="italic">COM CALMA.</span></h1></Reveal>
       <div className="grid md:grid-cols-2 gap-x-10 gap-y-12 mt-14">
         {EDITORIAL_POSTS.map((p, i) => (
           <Reveal key={p.slug} delay={Math.min(i * 0.06, 0.2)}>

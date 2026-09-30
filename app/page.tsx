@@ -50,7 +50,7 @@ function Hero() {
 
       {/* headline monumental */}
       <motion.div style={reduce ? undefined : { y: textY, opacity: fade }} className="absolute inset-0 flex flex-col justify-end pb-[10vh] px-5 md:px-10 pointer-events-none">
-        <motion.h1 className="font-serif-display leading-[0.82] tracking-tight text-[19vw] md:text-[13.5vw]" aria-label="Vista quem você é. Somos as cores.">
+        <motion.h1 className="font-serif-display leading-[0.94] tracking-tight text-[19vw] md:text-[13.5vw]" aria-label="Vista quem você é. Somos as cores.">
           <motion.span style={reduce ? undefined : { x: textXLeft }} className="block">
             <MaskLine>VISTA</MaskLine>
           </motion.span>
@@ -93,7 +93,7 @@ function Manifesto() {
           <Reveal>
             <p className="editorial-label opacity-50 mb-8">01 — A Ferretti</p>
           </Reveal>
-          <h2 className="font-serif-display text-[11.5vw] md:text-[6.2vw] leading-[0.9]">
+          <h2 className="font-serif-display text-[11.5vw] md:text-[6.2vw] leading-[0.96]">
             <MaskLine>MODA NÃO É</MaskLine>
             <MaskLine delay={0.06}>SÓ O QUE VOCÊ VESTE.</MaskLine>
             <span className="block mt-4 italic opacity-90">
@@ -131,7 +131,7 @@ function Brasilia() {
       <div className="mx-auto max-w-[1600px] px-5 md:px-10">
         <Reveal>
           <p className="editorial-label opacity-50">02 — Feita em Brasília</p>
-          <h2 className="font-serif-display text-[12vw] md:text-[7vw] leading-[0.88] mt-6">
+          <h2 className="font-serif-display text-[12vw] md:text-[7vw] leading-[0.96] mt-6">
             ENTRE O CONCRETO<br /><span className="italic">E O MOVIMENTO.</span>
           </h2>
         </Reveal>
@@ -213,7 +213,7 @@ function Cores() {
         <ColorWash progress={scrollYProgress} />
         <div className="relative z-10 mx-auto max-w-[1600px] px-5 md:px-10 w-full">
           <p className="editorial-label opacity-60">03 — Somos as cores · Campanha 2026</p>
-          <h2 className="font-serif-display text-[20vw] md:text-[11vw] leading-[0.82] mt-2">
+          <h2 className="font-serif-display text-[20vw] md:text-[11vw] leading-[0.94] mt-2">
             SOMOS<br />AS <span className="italic">CORES.</span>
           </h2>
           <ColorSteps progress={scrollYProgress} />
@@ -267,7 +267,7 @@ function Colecao() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <Reveal>
             <p className="editorial-label opacity-50">04 — A coleção</p>
-            <h2 className="font-serif-display text-[11vw] md:text-[5.5vw] leading-[0.9] mt-4">
+            <h2 className="font-serif-display text-[11vw] md:text-[5.5vw] leading-[0.96] mt-4">
               UMA PEÇA.<br /><span className="italic">MUITAS POSSIBILIDADES.</span>
             </h2>
           </Reveal>
@@ -320,7 +320,7 @@ function Looks() {
       <div className="mx-auto max-w-[1600px] px-5 md:px-10">
         <Reveal>
           <p className="editorial-label opacity-50">05 — Looks</p>
-          <h2 className="font-serif-display text-[11vw] md:text-[6vw] leading-[0.9] mt-4">
+          <h2 className="font-serif-display text-[11vw] md:text-[6vw] leading-[0.96] mt-4">
             NÃO É A ROUPA.<br /><span className="italic">É QUEM VESTE.</span>
           </h2>
         </Reveal>
@@ -365,7 +365,7 @@ function PessoasReais() {
       <div className="mx-auto max-w-[1600px] px-5 md:px-10">
         <Reveal>
           <p className="editorial-label opacity-50">06 — Pessoas reais</p>
-          <h2 className="font-serif-display text-[12vw] md:text-[6.5vw] leading-[0.88] mt-4 max-w-6xl">
+          <h2 className="font-serif-display text-[12vw] md:text-[6.5vw] leading-[0.96] mt-4 max-w-6xl">
             NÃO EXISTE UM CORPO CERTO PARA A ROUPA.
           </h2>
           <p className="font-serif-display italic text-[7vw] md:text-[3vw] mt-2 opacity-80">
@@ -396,7 +396,7 @@ function Atemporal() {
     <section className="border-y border-ink/10 bg-bone py-24 md:py-36" aria-label="Atemporalidade">
       <div className="mx-auto max-w-[1600px] px-5 md:px-10 grid md:grid-cols-2 gap-10 items-center">
         <Reveal>
-          <h2 className="font-serif-display text-[13vw] md:text-[5.5vw] leading-[0.88]">
+          <h2 className="font-serif-display text-[13vw] md:text-[5.5vw] leading-[0.96]">
             TENDÊNCIA<br />PASSA.<br /><span className="italic">ESTILO FICA.</span>
           </h2>
         </Reveal>
@@ -429,7 +429,7 @@ function Materia() {
       <div className="mx-auto max-w-[1600px] px-5 md:px-10">
         <Reveal>
           <p className="editorial-label opacity-50">07 — Matéria</p>
-          <h2 className="font-serif-display text-[11vw] md:text-[5.5vw] leading-[0.9] mt-4">TOQUE ANTES<br />DO <span className="italic">CONCEITO.</span></h2>
+          <h2 className="font-serif-display text-[11vw] md:text-[5.5vw] leading-[0.96] mt-4">TOQUE ANTES<br />DO <span className="italic">CONCEITO.</span></h2>
         </Reveal>
         <div className="mt-12 grid md:grid-cols-5 border-t border-ink/15">
           {mats.map((m, i) => (
@@ -487,7 +487,7 @@ function Runway() {
       <div className="mx-auto max-w-[1600px] px-5 md:px-10">
         <Reveal>
           <p className="editorial-label opacity-50">09 — Arquivo</p>
-          <h2 className="font-serif-display text-[11vw] md:text-[6vw] leading-[0.88] mt-4">FERRETTI<br /><span className="italic">ON THE RUNWAY</span></h2>
+          <h2 className="font-serif-display text-[11vw] md:text-[6vw] leading-[0.96] mt-4">FERRETTI<br /><span className="italic">ON THE RUNWAY</span></h2>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-4 mt-12">
           {[
@@ -517,7 +517,7 @@ function EditorialPreview() {
         <div className="flex items-end justify-between gap-6">
           <Reveal>
             <p className="editorial-label opacity-50">10 — Editorial</p>
-            <h2 className="font-serif-display text-[12vw] md:text-[5.5vw] leading-[0.9] mt-4">REVISTA,<br />NÃO <span className="italic">BLOG.</span></h2>
+            <h2 className="font-serif-display text-[12vw] md:text-[5.5vw] leading-[0.96] mt-4">REVISTA,<br />NÃO <span className="italic">BLOG.</span></h2>
           </Reveal>
           <Reveal delay={0.1} className="hidden md:block">
             <Link href="/editorial" className="inline-flex items-center gap-2 text-[12px] tracking-[0.3em] uppercase font-bold border-b border-ink pb-1">
@@ -548,7 +548,7 @@ function Feed() {
       <div className="mx-auto max-w-[1600px] px-5 md:px-10">
         <Reveal>
           <div className="flex items-end justify-between">
-            <h2 className="font-serif-display text-[11vw] md:text-[4.5vw] leading-[0.9]">FROM<br />THE <span className="italic">FEED</span></h2>
+            <h2 className="font-serif-display text-[11vw] md:text-[4.5vw] leading-[0.96]">FROM<br />THE <span className="italic">FEED</span></h2>
             <a href={STORE.instagramUrl} target="_blank" rel="noreferrer" className="text-[12px] tracking-[0.3em] uppercase font-bold border-b border-ink pb-1 whitespace-nowrap">
               {STORE.instagram} →
             </a>
@@ -577,7 +577,7 @@ function Casa() {
       <div className="mx-auto max-w-[1600px] px-5 md:px-10 grid md:grid-cols-2 gap-12 items-center">
         <Reveal>
           <p className="editorial-label opacity-50">11 — A loja</p>
-          <h2 className="font-serif-display text-[13vw] md:text-[5.5vw] leading-[0.88] mt-4">VISITE A<br />CASA <span className="italic">FERRETTI.</span></h2>
+          <h2 className="font-serif-display text-[13vw] md:text-[5.5vw] leading-[0.96] mt-4">VISITE A<br />CASA <span className="italic">FERRETTI.</span></h2>
           <p className="mt-8 flex items-start gap-2 opacity-80"><MapPin size={18} className="mt-0.5 shrink-0" /> {STORE.address}<br />{STORE.city}</p>
           <p className="mt-2 text-sm opacity-60">Físico: {STORE.hoursPhysical} · {STORE.hoursOnline}</p>
           <div className="flex gap-4 mt-8 flex-wrap">

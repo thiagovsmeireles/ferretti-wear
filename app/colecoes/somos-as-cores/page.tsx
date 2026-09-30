@@ -15,7 +15,7 @@ export default function SomosAsCores() {
       <section className="bg-ink text-bone py-16 md:py-24">
         <div className="mx-auto max-w-[1600px] px-5 md:px-10">
           <Reveal><p className="editorial-label opacity-50">Coleção · 2026 · Brasília</p>
-          <h1 className="font-serif-display text-[18vw] md:text-[11vw] leading-[0.82] mt-4">SOMOS<br />AS <span className="italic">CORES.</span></h1>
+          <h1 className="font-serif-display text-[18vw] md:text-[11vw] leading-[0.94] mt-4">SOMOS<br />AS <span className="italic">CORES.</span></h1>
           <p className="mt-8 max-w-[56ch] opacity-80 leading-relaxed">30 looks. 30 modelos. Verde, roxo, laranja, azul e amarelo em color blocking, estampas e texturas — linho, viscose, algodão, lesé 3D, crochê e macramê. A campanha dialoga com Brasília: concreto, brutalismo, diversidade, autenticidade e consumo consciente.</p></Reveal>
         </div>
       </section>

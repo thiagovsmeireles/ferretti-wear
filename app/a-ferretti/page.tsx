@@ -7,7 +7,7 @@ export default function AFerretti() {
   return (
     <div className="pt-32 pb-28 mx-auto max-w-[1600px] px-5 md:px-10">
       <Reveal><p className="editorial-label opacity-50">A Ferretti</p>
-      <h1 className="font-serif-display text-[13vw] md:text-[6.5vw] leading-[0.88] mt-4">MODA NÃO É<br />SÓ O QUE VOCÊ VESTE.</h1></Reveal>
+      <h1 className="font-serif-display text-[13vw] md:text-[6.5vw] leading-[0.96] mt-4">MODA NÃO É<br />SÓ O QUE VOCÊ VESTE.</h1></Reveal>
       <div className="grid md:grid-cols-2 gap-10 mt-12">
         <Reveal><EditorialImage color="#5B2A86" label="A Ferretti" sub="Brasília" tall /></Reveal>
         <div className="space-y-6 text-lg leading-relaxed opacity-85">

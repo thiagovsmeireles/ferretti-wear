@@ -36,7 +36,7 @@ export default function PieceClient({ slug }: { slug: string }) {
         <EditorialImage color={piece.colors[0]} label={piece.editorialNote} sub={piece.fabric} tall />
         <div>
           <p className="editorial-label opacity-50">{piece.category} · {piece.fabric}</p>
-          <h1 className="font-serif-display text-[11vw] md:text-[4.5vw] leading-[0.9] mt-3">{piece.name}</h1>
+          <h1 className="font-serif-display text-[11vw] md:text-[4.5vw] leading-[0.96] mt-3">{piece.name}</h1>
           <p className="mt-4 text-sm opacity-70 leading-relaxed">{piece.description}</p>
           <p className="mt-3 text-xs opacity-60">Composição: {piece.composition}</p>
           <p className="mt-2 text-xs opacity-60">{piece.availability}</p>
