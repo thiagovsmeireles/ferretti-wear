@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bone: #f4f1e8;
+  --ink: #101010;
+  --concrete: #8e8c86;
+  --smoke: #e5e0d3;
+  --laranja: #e85d1f;
+  --roxo: #5b2a86;
+  --verde: #1e6b3a;
+  --azul: #1d4ed8;
+  --amarelo: #e8b400;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+body {
+  background: var(--bone);
+  color: var(--ink);
+  font-family: 'Manrope','DM Sans','Inter',system-ui,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection { background: #101010; color: #f4f1e8; }
+
+.font-serif-display {
+  font-family: 'Instrument Serif','DM Serif Display','Cormorant Garamond',Georgia,serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.86;
+}
+
+.editorial-label {
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px currentColor;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-stroke-bone {
+  -webkit-text-stroke: 1px rgba(244,241,232,0.85);
+  -webkit-text-fill-color: transparent;
+}
+
+/* hide scrollbar for horizontal rails */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* focus */
+:focus-visible {
+  outline: 2px solid #101010;
+  outline-offset: 3px;
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* image treatment — campanha */
+.img-editorial { filter: saturate(1.08) contrast(1.05); }
+.grain::after {
+  content: "";
+  position: absolute; inset: 0;
+  pointer-events: none;
+  opacity: 0.14;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* custom cursor dot */
+.cursor-view {
+  cursor: none;
+}
+@media (pointer: coarse) {
+  .cursor-view { cursor: auto; }
+}
