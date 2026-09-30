@@ -36,6 +36,21 @@ export const PHOTOS = {
     alt: "Dois modelos com looks Ferretti Wear diante da Catedral de Brasília",
     credit: "Foto: Mariana Campos / Correio Braziliense",
   },
+  lookRoxo: {
+    src: `${B}/fotos/look-roxo.jpg`,
+    alt: "Modelo com capa vermelha e vestido roxo Ferretti Wear na passarela",
+    credit: "Frame: desfile BTFW 2026",
+  },
+  lookVerde: {
+    src: `${B}/fotos/look-verde.jpg`,
+    alt: "Modelo com macacão verde Ferretti Wear na passarela",
+    credit: "Frame: desfile BTFW 2026",
+  },
+  lookAmarelo: {
+    src: `${B}/fotos/look-amarelo.jpg`,
+    alt: "Modelo com camisa amarela e calça vermelha Ferretti Wear na passarela",
+    credit: "Frame: desfile BTFW 2026",
+  },
 } as const;
 
 export const PHOTO_CREDIT = "Fotos: Radar Digital Brasília · Desfile Somos as Cores";
@@ -45,3 +60,4 @@ export const CORREIO_2024_URL =
   "https://www.correiobraziliense.com.br/revista-do-correio/2024/10/6971285-sustentabilidade-e-criatividade-marcam-a-moda-autoral-de-brasilia.html";
 export const CORREIO_2026_URL =
   "https://www.correiobraziliense.com.br/revista-do-correio/2026/04/7398260-brasilia-veste-sua-propria-historia-moda-autoral-ocupa-monumentos-da-capital.html";
+export const BTFW_VIDEO_URL = "https://www.youtube.com/watch?v=9W9cO8mzdqE";
