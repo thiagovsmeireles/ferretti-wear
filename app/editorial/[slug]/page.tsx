@@ -4,6 +4,13 @@ import { ArrowLeft } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import EditorialImage from "@/components/EditorialImage";
 import { EDITORIAL_POSTS } from "@/lib/data";
+import { PHOTOS, PHOTO_CREDIT } from "@/lib/photos";
+
+const POST_PHOTOS: Record<string, { src: string; alt: string; position?: string } | undefined> = {
+  "somos-as-cores-bastidores": { src: PHOTOS.finale.src, alt: PHOTOS.finale.alt, position: "50% 35%" },
+  "atemporalidade-estilo-fica": { src: PHOTOS.azul.src, alt: PHOTOS.azul.alt, position: "50% 25%" },
+  "materia-linho-algodao-viscose": { src: PHOTOS.cru.src, alt: PHOTOS.cru.alt, position: "50% 30%" },
+};
 
 const BODY: Record<string, string[]> = {
   "somos-as-cores-bastidores": [
@@ -38,7 +45,8 @@ export default function Post({ params }: { params: { slug: string } }) {
       <Reveal><p className="editorial-label opacity-50 mt-8">{post.tag}</p>
       <h1 className="font-serif-display text-[11vw] md:text-[4.5vw] leading-[0.96] mt-4">{post.title}</h1>
       <p className="mt-4 opacity-60 text-lg">{post.excerpt}</p></Reveal>
-      <Reveal delay={0.1}><div className="mt-10"><EditorialImage color="#E85D1F" label={post.tag} sub={post.title.slice(0, 24)} /></div></Reveal>
+      <Reveal delay={0.1}><div className="mt-10"><EditorialImage color="#E85D1F" label={post.tag} sub={post.title.slice(0, 24)} src={POST_PHOTOS[post.slug]?.src} alt={POST_PHOTOS[post.slug]?.alt} position={POST_PHOTOS[post.slug]?.position} /></div>
+      {POST_PHOTOS[post.slug] && <p className="text-[11px] tracking-[0.25em] uppercase opacity-50 mt-2">{PHOTO_CREDIT}</p>}</Reveal>
       <div className="mt-10 space-y-6 text-lg leading-relaxed opacity-85">
         {(BODY[post.slug] ?? [post.excerpt]).map((par, i) => <Reveal key={i}><p>{par}</p></Reveal>)}
       </div>

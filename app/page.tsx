@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, MapPin } from "lucide-react";
 import EditorialImage from "@/components/EditorialImage";
 import { Reveal, MaskLine } from "@/components/Reveal";
 import { PIECES, LOOKS, COLORS, EDITORIAL_POSTS, STORE } from "@/lib/data";
+import { PHOTOS, PHOTO_CREDIT } from "@/lib/photos";
 
 /* ============ HERO — campanha editorial + scroll cinematográfico ============ */
 function Hero() {
@@ -20,25 +22,26 @@ function Hero() {
 
   return (
     <section ref={ref} className="relative h-[108svh] overflow-clip bg-ink text-bone" aria-label="Campanha Ferretti Wear">
-      {/* fotografia de campanha — substituir por asset real em /public/hero.jpg */}
+      {/* fotografia de campanha — final do desfile Somos as Cores, Dunia Hall */}
       <motion.div style={reduce ? undefined : { scale: imgScale }} className="absolute inset-0">
+        <Image
+          src={PHOTOS.finale.src}
+          alt={PHOTOS.finale.alt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+          style={{ objectPosition: "50% 35%" }}
+        />
+        {/* véu editorial — legibilidade + unidade concreto × cor */}
         <div
           className="absolute inset-0 grain"
-          role="img"
-          aria-label="Editorial Ferretti: modelo em roupa colorida diante do concreto de Brasília"
+          aria-hidden
           style={{
             background:
-              "linear-gradient(180deg, rgba(16,16,16,0.15) 0%, rgba(16,16,16,0.55) 100%), linear-gradient(100deg, #c9c2b2 0 38%, #E85D1F 38.3% 58%, #5B2A86 58.3% 78%, #1E6B3A 78.3% 100%)",
+              "linear-gradient(180deg, rgba(244,241,232,0.92) 0%, rgba(244,241,232,0.35) 18%, rgba(244,241,232,0) 30%), linear-gradient(180deg, rgba(16,16,16,0.15) 0%, rgba(16,16,16,0.1) 35%, rgba(16,16,16,0.55) 100%), linear-gradient(100deg, rgba(16,16,16,0.35) 0%, rgba(232,93,31,0.12) 55%, rgba(16,16,16,0.25) 100%)",
           }}
-        >
-          <div className="absolute inset-y-0 left-[8%] w-px bg-bone/40" aria-hidden />
-          <div className="absolute inset-y-0 left-[22%] w-px bg-bone/25" aria-hidden />
-          <div className="absolute inset-y-0 left-[38%] w-[3px] bg-ink/60" aria-hidden />
-          {/* figura central */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[min(46vw,420px)] h-[76%] rounded-t-full bg-gradient-to-b from-[#E85D1F] via-[#7a2f12] to-ink" aria-hidden />
-          <div className="absolute bottom-[38%] left-[8%] w-[26vw] h-[30vh] bg-[#1D4ED8]/80 mix-blend-multiply blur-[1px]" aria-hidden />
-          <div className="absolute top-0 right-0 w-[30%] h-[34%] bg-gradient-to-b from-[#9db4d0] to-transparent" aria-hidden />
-        </div>
+        />
       </motion.div>
 
       {/* micro editorial top */}
@@ -76,9 +79,12 @@ function Hero() {
         </div>
       </motion.div>
 
-      {/* indicador scroll */}
+      {/* indicador scroll + crédito da foto */}
       <div className="absolute bottom-5 left-1/2 -translate-x-1/2 editorial-label opacity-50 animate-pulse" aria-hidden>
         scroll
+      </div>
+      <div className="absolute bottom-5 right-5 md:right-10 text-[10px] tracking-[0.2em] uppercase opacity-50 hidden sm:block" aria-hidden>
+        {PHOTO_CREDIT}
       </div>
     </section>
   );
@@ -114,7 +120,7 @@ function Manifesto() {
         </div>
         <div className="md:col-span-4">
           <Reveal delay={0.15}>
-            <EditorialImage color="#E85D1F" label="Editorial Ferretti" sub="corpo × tecido" tall href="/looks" />
+            <EditorialImage src={PHOTOS.cru.src} alt={PHOTOS.cru.alt} position="50% 18%" label="Passarela — Somos as Cores" sub="conjunto cru bordado" tall href="/looks" />
             <p className="text-xs mt-3 opacity-50">Corpos reais, modelagem agênero, conforto e elegância.</p>
           </Reveal>
         </div>
@@ -345,11 +351,13 @@ function Looks() {
             ))}
           </div>
           <Reveal className="md:sticky md:top-28 self-start">
-            <div className="aspect-[4/5] relative overflow-hidden" style={{ background: active.color }} role="img" aria-label={`${active.title} em ${active.colorName}`}>
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[54%] h-[82%] rounded-t-full bg-ink/85" aria-hidden />
-              <p className="absolute bottom-6 left-6 right-6 font-serif-display italic text-2xl md:text-3xl text-bone">{active.statement}</p>
+            <div className="grid grid-cols-2 gap-3">
+              <EditorialImage src={PHOTOS.azul.src} alt={PHOTOS.azul.alt} position="50% 25%" label="Look 03 — Azul" sub="passarela" tall />
+              <EditorialImage src={PHOTOS.cru.src} alt={PHOTOS.cru.alt} position="50% 55%" label="Look neutro" sub="passarela" tall />
             </div>
-            <Link href="/looks" className="inline-flex items-center gap-2 mt-5 text-[12px] tracking-[0.3em] uppercase font-bold border-b border-bone pb-1">
+            <p className="font-serif-display italic text-2xl md:text-3xl mt-5 max-w-[26ch]">{active.statement}</p>
+            <p className="text-[11px] tracking-[0.25em] uppercase opacity-50 mt-2">{PHOTO_CREDIT}</p>
+            <Link href="/looks" className="inline-flex items-center gap-2 mt-4 text-[12px] tracking-[0.3em] uppercase font-bold border-b border-bone pb-1">
               Comprar o look <ArrowRight size={14} />
             </Link>
           </Reveal>
@@ -373,15 +381,15 @@ function PessoasReais() {
           </p>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-4 mt-12">
-          {[
-            { c: "#E85D1F", t: "Corpos diversos" },
-            { c: "#5B2A86", t: "Idades diversas" },
-            { c: "#1E6B3A", t: "Estilos diversos" },
-          ].map((x) => (
-            <Reveal key={x.t}>
-              <EditorialImage color={x.c} label={x.t} sub="individualidade" tall />
-            </Reveal>
-          ))}
+          <Reveal>
+            <EditorialImage src={PHOTOS.finale.src} alt={PHOTOS.finale.alt} position="50% 78%" label="Público diverso" sub="Dunia Hall" tall />
+          </Reveal>
+          <Reveal>
+            <EditorialImage color="#5B2A86" label="Idades diversas" sub="individualidade" tall />
+          </Reveal>
+          <Reveal>
+            <EditorialImage color="#1E6B3A" label="Estilos diversos" sub="individualidade" tall />
+          </Reveal>
         </div>
         <Reveal className="mt-8">
           <p className="text-sm opacity-60 max-w-[60ch]">Diversidade como linguagem — não como marketing superficial. A mesma linguagem de moda, em diferentes corpos, identidades e personalidades.</p>
@@ -454,7 +462,7 @@ function Salomao() {
       <div className="mx-auto max-w-[1600px] px-5 md:px-10 grid md:grid-cols-12 gap-10">
         <div className="md:col-span-5">
           <Reveal>
-            <EditorialImage color="#101010" label="Salomão Ferretti" sub="retrato + manifesto" tall />
+            <EditorialImage src={PHOTOS.finale.src} alt={PHOTOS.finale.alt} position="50% 22%" label="Salomão Ferretti" sub="final — Dunia Hall" tall />
           </Reveal>
         </div>
         <div className="md:col-span-7 flex flex-col justify-center">
@@ -490,14 +498,14 @@ function Runway() {
           <h2 className="font-serif-display text-[11vw] md:text-[6vw] leading-[0.96] mt-4">FERRETTI<br /><span className="italic">ON THE RUNWAY</span></h2>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-4 mt-12">
-          {[
+          {( [
             { y: "2024", c: "#8E8C86", t: "Origens — concreto e base" },
             { y: "2025", c: "#5B2A86", t: "Transição — a cor entra" },
-            { y: "2026", c: "#E85D1F", t: "Somos as cores — 30 looks" },
-          ].map((d) => (
+            { y: "2026", c: "#E85D1F", t: "Somos as cores — 30 looks", src: PHOTOS.finale.src, alt: PHOTOS.finale.alt, position: "50% 35%" },
+          ] as { y: string; c: string; t: string; src?: string; alt?: string; position?: string }[] ).map((d) => (
             <Link key={d.y} href="/colecoes/somos-as-cores" className="group">
               <Reveal>
-                <EditorialImage color={d.c} label={d.y} sub={d.t} />
+                <EditorialImage color={d.c} label={d.y} sub={d.t} src={d.src} alt={d.alt} position={d.position} />
                 <p className="mt-3 flex justify-between text-[11px] tracking-[0.3em] uppercase opacity-70">
                   <span>{d.y}</span><span className="group-hover:translate-x-1 transition">Abrir editorial →</span>
                 </p>
@@ -555,9 +563,24 @@ function Feed() {
           </div>
         </Reveal>
         <div className="grid grid-cols-2 md:grid-cols-6 gap-2 md:gap-3 mt-10">
-          {["#E85D1F", "#5B2A86", "#1D4ED8", "#1E6B3A", "#E8B400", "#101010"].map((c, i) => (
-            <Reveal key={i} delay={i * 0.04}>
-              <a href={STORE.instagramUrl} target="_blank" rel="noreferrer" aria-label={`Abrir Instagram Ferretti — imagem ${i + 1}`}>
+          {[
+            { src: PHOTOS.azul.src, alt: PHOTOS.azul.alt },
+            { src: PHOTOS.cru.src, alt: PHOTOS.cru.alt },
+            { src: PHOTOS.finale.src, alt: PHOTOS.finale.alt },
+            { src: PHOTOS.loja.src, alt: PHOTOS.loja.alt },
+          ].map((p, i) => (
+            <Reveal key={p.src} delay={i * 0.04}>
+              <a href={STORE.instagramUrl} target="_blank" rel="noreferrer" aria-label={`Abrir Instagram Ferretti — foto ${i + 1}: ${p.alt}`}>
+                <div className="aspect-square relative overflow-hidden group bg-ink">
+                  <Image src={p.src} alt="" fill sizes="(max-width: 768px) 50vw, 16vw" className="object-cover transition-transform duration-700 group-hover:scale-105" style={{ objectPosition: "50% 25%" }} />
+                  <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-ink/40 text-bone text-[11px] tracking-[0.3em] uppercase">View</span>
+                </div>
+              </a>
+            </Reveal>
+          ))}
+          {["#E85D1F", "#5B2A86"].map((c, i) => (
+            <Reveal key={c} delay={(i + 4) * 0.04}>
+              <a href={STORE.instagramUrl} target="_blank" rel="noreferrer" aria-label={`Abrir Instagram Ferretti — cor ${i + 5}`}>
                 <div className="aspect-square relative overflow-hidden group" style={{ background: `linear-gradient(135deg, ${c}, #101010)` }}>
                   <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition bg-ink/40 text-bone text-[11px] tracking-[0.3em] uppercase">View</span>
                 </div>
@@ -590,7 +613,7 @@ function Casa() {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <EditorialImage color="#1E6B3A" label="Casa Ferretti" sub="CLN 102 Norte" tall />
+          <EditorialImage src={PHOTOS.loja.src} alt={PHOTOS.loja.alt} position="50% 30%" label="Casa Ferretti" sub="CLN 102 Norte" tall />
         </Reveal>
       </div>
     </section>

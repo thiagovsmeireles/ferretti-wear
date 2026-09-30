@@ -1,7 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
 import EditorialImage from "@/components/EditorialImage";
 import { LOOKS } from "@/lib/data";
+import { PHOTOS } from "@/lib/photos";
 
 export const metadata = { title: "Looks | Ferretti Wear" };
 
@@ -15,9 +17,13 @@ export default function LooksPage() {
           {LOOKS.map((l) => (
             <Reveal key={l.id}>
               <Link href="/colecoes/somos-as-cores" className="group block">
-                <div className="aspect-[3/4] relative overflow-hidden" style={{ background: l.color }}>
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[54%] h-[78%] rounded-t-full bg-ink/85" aria-hidden />
-                  <span className="absolute top-4 left-4 editorial-label bg-ink/70 px-3 py-1.5">{l.title}</span>
+                <div className="aspect-[3/4] relative overflow-hidden bg-ink" style={l.id === "03" ? undefined : { background: l.color }}>
+                  {l.id === "03" ? (
+                    <Image src={PHOTOS.azul.src} alt={PHOTOS.azul.alt} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" style={{ objectPosition: "50% 25%" }} />
+                  ) : (
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[54%] h-[78%] rounded-t-full bg-ink/85" aria-hidden />
+                  )}
+                  <span className="absolute top-4 left-4 editorial-label bg-ink/70 text-bone px-3 py-1.5">{l.title}</span>
                 </div>
                 <p className="mt-3 flex justify-between text-[11px] tracking-[0.3em] uppercase opacity-70"><span>{l.colorName}</span><span>Comprar look →</span></p>
               </Link>

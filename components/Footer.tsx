@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { STORE } from "@/lib/data";
+import { PHOTO_CREDIT, PHOTO_CREDIT_URL } from "@/lib/photos";
 
 export default function Footer() {
   return (
@@ -51,6 +52,11 @@ export default function Footer() {
             <p className="mt-6 opacity-50 text-xs leading-relaxed">
               Estrutura de e-commerce preparada. Sem preços inventados, sem checkout falso.
               Tecidos naturais: linho, algodão, viscose.
+            </p>
+            <p className="mt-3 opacity-50 text-xs leading-relaxed">
+              <a href={PHOTO_CREDIT_URL} target="_blank" rel="noreferrer" className="underline underline-offset-4 hover:opacity-80">
+                {PHOTO_CREDIT}
+              </a>
             </p>
           </div>
         </div>

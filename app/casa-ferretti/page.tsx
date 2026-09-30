@@ -1,6 +1,7 @@
 import { Reveal } from "@/components/Reveal";
 import EditorialImage from "@/components/EditorialImage";
 import { STORE } from "@/lib/data";
+import { PHOTOS, PHOTO_CREDIT } from "@/lib/photos";
 
 export const metadata = { title: "Casa Ferretti | Ferretti Wear" };
 
@@ -10,8 +11,8 @@ export default function Casa() {
       <Reveal><p className="editorial-label opacity-50">A loja</p>
       <h1 className="font-serif-display text-[13vw] md:text-[6.5vw] leading-[0.96] mt-4">CASA<br /><span className="italic">FERRETTI.</span></h1></Reveal>
       <div className="grid md:grid-cols-2 gap-10 mt-12 items-start">
-        <Reveal><EditorialImage color="#1E6B3A" label="Casa Ferretti" sub="CLN 102 Norte" tall />
-        <p className="text-xs mt-3 opacity-50">Troque por fotografia real da loja — fachada, interior, arara, texturas.</p></Reveal>
+        <Reveal><EditorialImage src={PHOTOS.loja.src} alt={PHOTOS.loja.alt} position="50% 30%" label="Casa Ferretti" sub="CLN 102 Norte" tall />
+        <p className="text-xs mt-3 opacity-50">{PHOTO_CREDIT} — entrevista na loja.</p></Reveal>
         <div>
           <Reveal>
             <p className="text-2xl font-semibold">{STORE.address}</p>

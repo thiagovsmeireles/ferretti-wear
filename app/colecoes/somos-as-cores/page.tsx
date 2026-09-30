@@ -1,8 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import EditorialImage from "@/components/EditorialImage";
 import { PIECES, LOOKS } from "@/lib/data";
+import { PHOTOS, PHOTO_CREDIT } from "@/lib/photos";
+
+const LOOK_PHOTOS: Record<string, { src: string; alt: string; position: string }> = {
+  "03": { src: PHOTOS.azul.src, alt: PHOTOS.azul.alt, position: "50% 25%" },
+};
 
 export const metadata = {
   title: "SOMOS AS CORES — Campanha 2026 | Ferretti Wear",
@@ -20,10 +26,17 @@ export default function SomosAsCores() {
         </div>
       </section>
       <section className="mx-auto max-w-[1600px] px-5 md:px-10 py-16">
-        <div className="grid md:grid-cols-2 gap-6">
+        <Reveal>
+          <div className="relative overflow-hidden aspect-[16/8] md:aspect-[21/8] bg-ink">
+            <Image src={PHOTOS.finale.src} alt={PHOTOS.finale.alt} fill sizes="100vw" className="object-cover" style={{ objectPosition: "50% 30%" }} />
+            <span className="absolute top-5 left-5 editorial-label bg-ink/60 text-bone px-3 py-1.5">Final — Dunia Hall</span>
+          </div>
+          <p className="text-[11px] tracking-[0.25em] uppercase opacity-50 mt-2">{PHOTO_CREDIT}</p>
+        </Reveal>
+        <div className="grid md:grid-cols-2 gap-6 mt-12">
           {LOOKS.map((l, i) => (
             <Reveal key={l.id} delay={Math.min(i * 0.05, 0.2)}>
-              <EditorialImage color={l.color} label={l.title} sub={l.colorName} tall={i % 2 === 0} />
+              <EditorialImage color={l.color} label={l.title} sub={l.colorName} tall={i % 2 === 0} src={LOOK_PHOTOS[l.id]?.src} alt={LOOK_PHOTOS[l.id]?.alt} position={LOOK_PHOTOS[l.id]?.position} />
               <p className="font-serif-display italic text-2xl mt-3">{l.statement}</p>
             </Reveal>
           ))}
