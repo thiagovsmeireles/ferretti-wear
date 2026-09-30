@@ -4,13 +4,10 @@ import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import EditorialImage from "@/components/EditorialImage";
 import { PIECES, LOOKS } from "@/lib/data";
-import { PHOTOS, PHOTO_CREDIT, BTFW_VIDEO_URL } from "@/lib/photos";
+import { PHOTOS, PHOTO_CREDIT } from "@/lib/photos";
 
 const LOOK_PHOTOS: Record<string, { src: string; alt: string; position: string }> = {
-  "02": { src: PHOTOS.lookRoxo.src, alt: PHOTOS.lookRoxo.alt, position: "50% 30%" },
   "03": { src: PHOTOS.azul.src, alt: PHOTOS.azul.alt, position: "50% 25%" },
-  "04": { src: PHOTOS.lookVerde.src, alt: PHOTOS.lookVerde.alt, position: "50% 30%" },
-  "05": { src: PHOTOS.lookAmarelo.src, alt: PHOTOS.lookAmarelo.alt, position: "50% 30%" },
 };
 
 export const metadata = {
@@ -34,7 +31,7 @@ export default function SomosAsCores() {
             <Image src={PHOTOS.finale.src} alt={PHOTOS.finale.alt} fill sizes="100vw" className="object-cover" style={{ objectPosition: "50% 30%" }} />
             <span className="absolute top-5 left-5 editorial-label bg-ink/60 text-bone px-3 py-1.5">Final — Dunia Hall</span>
           </div>
-          <p className="text-[11px] tracking-[0.25em] uppercase opacity-50 mt-2">{PHOTO_CREDIT} · Looks: frames do <a href={BTFW_VIDEO_URL} target="_blank" rel="noreferrer" className="underline underline-offset-4">desfile BTFW 2026</a></p>
+          <p className="text-[11px] tracking-[0.25em] uppercase opacity-50 mt-2">{PHOTO_CREDIT}</p>
         </Reveal>
         <div className="grid md:grid-cols-2 gap-6 mt-12">
           {LOOKS.map((l, i) => (

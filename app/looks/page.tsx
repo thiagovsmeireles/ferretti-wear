@@ -3,15 +3,12 @@ import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
 import EditorialImage from "@/components/EditorialImage";
 import { LOOKS } from "@/lib/data";
-import { PHOTOS, BTFW_VIDEO_URL } from "@/lib/photos";
+import { PHOTOS } from "@/lib/photos";
 
 export const metadata = { title: "Looks | Ferretti Wear" };
 
 const LOOK_PHOTOS: Record<string, { src: string; alt: string; position: string }> = {
-  "02": { src: PHOTOS.lookRoxo.src, alt: PHOTOS.lookRoxo.alt, position: "50% 30%" },
   "03": { src: PHOTOS.azul.src, alt: PHOTOS.azul.alt, position: "50% 25%" },
-  "04": { src: PHOTOS.lookVerde.src, alt: PHOTOS.lookVerde.alt, position: "50% 30%" },
-  "05": { src: PHOTOS.lookAmarelo.src, alt: PHOTOS.lookAmarelo.alt, position: "50% 30%" },
 };
 
 export default function LooksPage() {
@@ -43,13 +40,6 @@ export default function LooksPage() {
             </Link>
           </Reveal>
         </div>
-        <p className="text-[11px] tracking-[0.25em] uppercase opacity-50 mt-10">
-          Fotos dos looks: frames do{" "}
-          <a href={BTFW_VIDEO_URL} target="_blank" rel="noreferrer" className="underline underline-offset-4 hover:opacity-80">
-            desfile BTFW 2026
-          </a>
-          {" "}· LOOK 01 em breve com foto própria
-        </p>
       </div>
     </div>
   );

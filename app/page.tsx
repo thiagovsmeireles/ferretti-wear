@@ -363,7 +363,7 @@ function PessoasReais() {
             <EditorialImage color="#5B2A86" label="Idades diversas" sub="individualidade" tall />
           </Reveal>
           <Reveal>
-            <EditorialImage src={PHOTOS.vermelho.src} alt={PHOTOS.vermelho.alt} position="50% 20%" label="Estilos diversos" sub="passarela" tall />
+            <EditorialImage color="#1E6B3A" label="Estilos diversos" sub="individualidade" tall />
           </Reveal>
         </div>
         <Reveal className="mt-8">
